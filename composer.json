@@ -1,2 +1,8 @@
 {
+  "autoload": {
+    "psr-4": {
+      "Aplication\\": "app",
+      "Core\\": "core"
+    }
+  }
 }
