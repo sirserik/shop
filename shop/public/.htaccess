@@ -1,0 +1,16 @@
+# Включаем mod_rewrite
+RewriteEngine On
+
+# Указываем корневую директорию (относительно public/)
+RewriteBase /
+
+# Исключаем существующие файлы и папки
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Перенаправляем все запросы на index.php с сохранением GET-параметров
+RewriteRule ^ index.php [L,QSA]
+
+# Перенаправление на HTTPS (если требуется)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
