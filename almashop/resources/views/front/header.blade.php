@@ -73,15 +73,27 @@
                         </form>
                     </div>
                 </div>
+                @guest
+                    <div class="header-tools__item hover-container">
+                        <a href="{{ route('login') }}" class="header-tools__item">
+                            <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <use href="#icon_user" />
+                            </svg>
+                        </a>
+                    </div>
+                @else
+                    <div class="header-tools__item hover-container d-flex align-items-center gap-1">
+                        <a href="{{ Auth::user()->utype === 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}" class="header-tools__item d-flex align-items-center gap-1">
+                            <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <use href="#icon_user" />
+                            </svg>
+                            <span>{{ Auth::user()->name }}</span>
+                        </a>
+                    </div>
+                @endguest
 
-                <div class="header-tools__item hover-container">
-                    <a href="login.html" class="header-tools__item">
-                        <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_user" />
-                        </svg>
-                    </a>
-                </div>
 
                 <a href="wishlist.html" class="header-tools__item">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
