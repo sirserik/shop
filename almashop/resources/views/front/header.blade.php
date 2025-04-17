@@ -2,7 +2,7 @@
     <div class="container">
         <div class="header-desk header-desk_type_1">
             <div class="logo">
-                <a href="index.html">
+                <a href="{{route('main.page')}}">
                     <img src="assets/images/logo.png" alt="Uomo" class="logo__image d-block" />
                 </a>
             </div>
@@ -10,7 +10,7 @@
             <nav class="navigation">
                 <ul class="navigation__list list-unstyled d-flex">
                     <li class="navigation__item">
-                        <a href="index.html" class="navigation__link">Home</a>
+                        <a href="{{route('main.page')}}" class="navigation__link">Home</a>
                     </li>
                     <li class="navigation__item">
                         <a href="shop.html" class="navigation__link">Shop</a>
@@ -83,16 +83,24 @@
                         </a>
                     </div>
                 @else
-                    <div class="header-tools__item hover-container d-flex align-items-center gap-1">
-                        <a href="{{ Auth::user()->utype === 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}" class="header-tools__item d-flex align-items-center gap-1">
+                    <div class="header-tools__item hover-container d-flex align-items-center gap-2">
+                        <a href="{{ Auth::user()->utype === 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}" class="header-tools__item d-flex align-items-center gap-1 text-decoration-none">
                             <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <use href="#icon_user" />
                             </svg>
                             <span>{{ Auth::user()->name }}</span>
                         </a>
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-link p-0 m-0 text-decoration-none" style="color: inherit;">
+                                Выйти
+                            </button>
+                        </form>
                     </div>
                 @endguest
+
 
 
                 <a href="wishlist.html" class="header-tools__item">

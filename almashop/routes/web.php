@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('main.page');
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/account-dashboard',[\App\Http\Controllers\UserController::class,'index'])->name('user.dashboard');
