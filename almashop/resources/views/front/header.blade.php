@@ -83,23 +83,31 @@
                         </a>
                     </div>
                 @else
-                    <div class="header-tools__item hover-container d-flex align-items-center gap-2">
-                        <a href="{{ Auth::user()->utype === 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}" class="header-tools__item d-flex align-items-center gap-1 text-decoration-none">
+                    <div class="dropdown header-tools__item">
+                        <a class="dropdown-toggle d-flex align-items-center gap-1 text-decoration-none" href="#" role="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <use href="#icon_user" />
                             </svg>
                             <span>{{ Auth::user()->name }}</span>
                         </a>
-
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="btn btn-link p-0 m-0 text-decoration-none" style="color: inherit;">
-                                Выйти
-                            </button>
-                        </form>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                            <li>
+                                <a class="dropdown-item" href="{{ Auth::user()->utype === 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}">
+                                    Личный кабинет
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Выйти</button>
+                                </form>
+                            </li>
+                        </ul>
                     </div>
                 @endguest
+
 
 
 

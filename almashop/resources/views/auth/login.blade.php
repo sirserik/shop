@@ -45,9 +45,15 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Remember Me  ') }}
                                     </label>
+                                    @if (Route::has('register'))
+                                        <a class="btn btn-link" href="{{ route('register') }}">
+                                            {{ __('Don\'t have an account? Register') }}
+                                        </a>
+                                    @endif
                                 </div>
+
                             </div>
                         </div>
 
@@ -62,8 +68,13 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                <br>
+
+
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
