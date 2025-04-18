@@ -22,6 +22,7 @@
         </div>
         <div class="center-item">
             <ul class="menu-list">
+                {{-- Products --}}
                 <li class="menu-item has-children">
                     <a href="javascript:void(0);" class="menu-item-button">
                         <div class="icon"><i class="icon-shopping-cart"></i></div>
@@ -29,17 +30,19 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="sub-menu-item">
-                            <a href="add-product.html" class="">
+                            <a href="{{ route('products.create') }}">
                                 <div class="text">Add Product</div>
                             </a>
                         </li>
                         <li class="sub-menu-item">
-                            <a href="products.html" class="">
+                            <a href="{{ route('products.index') }}">
                                 <div class="text">Products</div>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                {{-- Brand --}}
                 <li class="menu-item has-children">
                     <a href="javascript:void(0);" class="menu-item-button">
                         <div class="icon"><i class="icon-layers"></i></div>
@@ -47,17 +50,19 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="sub-menu-item">
-                            <a href="add-brand.html" class="">
+                            <a href="{{ route('brands.create') }}">
                                 <div class="text">New Brand</div>
                             </a>
                         </li>
                         <li class="sub-menu-item">
-                            <a href="brands.html" class="">
+                            <a href="{{ route('brands.index') }}">
                                 <div class="text">Brands</div>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                {{-- Category --}}
                 <li class="menu-item has-children">
                     <a href="javascript:void(0);" class="menu-item-button">
                         <div class="icon"><i class="icon-layers"></i></div>
@@ -65,18 +70,19 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="sub-menu-item">
-                            <a href="add-category.html" class="">
+                            <a href="{{ route('categories.create') }}">
                                 <div class="text">New Category</div>
                             </a>
                         </li>
                         <li class="sub-menu-item">
-                            <a href="categories.html" class="">
+                            <a href="{{ route('categories.index') }}">
                                 <div class="text">Categories</div>
                             </a>
                         </li>
                     </ul>
                 </li>
 
+                {{-- Order --}}
                 <li class="menu-item has-children">
                     <a href="javascript:void(0);" class="menu-item-button">
                         <div class="icon"><i class="icon-file-plus"></i></div>
@@ -84,44 +90,61 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="sub-menu-item">
-                            <a href="orders.html" class="">
+                            <a href="{{ route('orders.index') }}">
                                 <div class="text">Orders</div>
                             </a>
                         </li>
                         <li class="sub-menu-item">
-                            <a href="order-tracking.html" class="">
+                            <a href="{{ route('orders.tracking') }}">
                                 <div class="text">Order tracking</div>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                {{-- Slider --}}
                 <li class="menu-item">
-                    <a href="slider.html" class="">
+                    <a href="{{ route('slider.index') }}">
                         <div class="icon"><i class="icon-image"></i></div>
                         <div class="text">Slider</div>
                     </a>
                 </li>
+
+                {{-- Coupons --}}
                 <li class="menu-item">
-                    <a href="coupons.html" class="">
+                    <a href="{{ route('coupons.index') }}">
                         <div class="icon"><i class="icon-grid"></i></div>
-                        <div class="text">Coupns</div>
+                        <div class="text">Coupons</div>
                     </a>
                 </li>
 
+                {{-- Users --}}
                 <li class="menu-item">
-                    <a href="users.html" class="">
+                    <a href="{{ route('users.index') }}">
                         <div class="icon"><i class="icon-user"></i></div>
                         <div class="text">User</div>
                     </a>
                 </li>
 
+                {{-- Settings --}}
                 <li class="menu-item">
-                    <a href="settings.html" class="">
+                    <a href="{{ route('settings.index') }}">
                         <div class="icon"><i class="icon-settings"></i></div>
                         <div class="text">Settings</div>
                     </a>
                 </li>
+                {{-- Logout --}}
+                <li class="menu-item">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="icon-logout"></i>
+                            <span class="text">Logout</span>
+                        </button>
+                    </form>
+                </li>
             </ul>
         </div>
+
     </div>
 </div>
