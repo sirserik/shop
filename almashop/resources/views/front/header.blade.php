@@ -3,7 +3,8 @@
         <div class="header-desk header-desk_type_1">
             <div class="logo">
                 <a href="{{route('main.page')}}">
-                    <img src="assets/images/logo.png" alt="Uomo" class="logo__image d-block" />
+                    <h1>Almashop</h1>
+{{--                    <img src="assets/images/logo.png" alt="Uomo" class="logo__image d-block" />--}}
                 </a>
             </div>
 

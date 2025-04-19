@@ -20,12 +20,13 @@ body {
 
 .pagination {
     margin-left: 30px;
-
-    .page-link {
-        padding: 1.1rem;
-        font-size: 16px;
-    }
 }
+
+.pagination .page-link {
+    padding: 1.1rem;
+    font-size: 16px;
+}
+
 
 .swal-button--confirm {
     background-color: #dc3545 !important;
@@ -98,12 +99,13 @@ body {
 
 .pagination {
     margin-left: 30px;
-
-    .page-link {
-        padding: 1.1rem;
-        font-size: 16px;
-    }
 }
+
+.pagination .page-link {
+    padding: 1.1rem;
+    font-size: 16px;
+}
+
 
 .swal-button--confirm {
     background-color: #dc3545 !important;
